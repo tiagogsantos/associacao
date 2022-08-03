@@ -15,6 +15,8 @@ class CreateAreasTable extends Migration
     {
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
+
+            // Nome da area
             $table->string('name');
 
             // Municio
@@ -24,22 +26,22 @@ class CreateAreasTable extends Migration
             $table->decimal('earthlyvalue', 10, 2)->nullable();
 
             // Total de metragem da aérea
-            $table->integer('totalarea')->default('0');
+            $table->integer('totalarea');
 
             // Coordenador da Área
             $table->string('coordinator');
 
             // Abertura de Rua
-            $table->boolean('streetopening')->nullable();
+            $table->boolean('streetopening')->default('0');
 
             // Esgoto
-            $table->boolean('sewage')->nullable();
+            $table->boolean('sewage')->default('0');
 
             // Luz / Energia
-            $table->boolean('light')->nullable();
+            $table->boolean('light')->default('0');
 
             //Agua
-            $table->boolean('water')->nullable();
+            $table->boolean('water')->default('0');
 
             $table->timestamps();
         });

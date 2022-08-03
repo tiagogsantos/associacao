@@ -11,6 +11,7 @@ class DashboardController extends Controller
     public function index()
     {
         $associados = Associados::all();
+
         return view('index', [
             'associados' => $associados
         ]);

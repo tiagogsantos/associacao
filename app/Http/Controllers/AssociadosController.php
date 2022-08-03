@@ -15,7 +15,7 @@ class AssociadosController extends Controller
     // Retorna a página index dos associados
     public function index()
     {
-        $associados = Associados::all()->count();
+        $associados = Associados::all();
 
         return view('associados.index', [
             'associados' => $associados

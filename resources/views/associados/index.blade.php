@@ -18,7 +18,26 @@
                 <th>Telefone</th>
                 <th>Estado Civil</th>
                 <th>Área Comprada</th>
+                <th>Ações</th>
             </tr>
+
+            @foreach($associados as $associado)
+                <tr>
+                    <td>{{ $associado->name }}</td>
+                    <td>{{ $associado->email }}</td>
+                    <td>{{ $associado->phone }}</td>
+                    <td>{{ $associado->cpf }}</td>
+                    <td>- - -</td>
+                    <td>
+                        <a href="{{ route('show.associados', $associado->id) }}">
+                            <button class="btn btn-info btn-sm">Visualizar</button>
+                        </a>
+                        <a href="{{ route('edit.associados', $associado->id) }}">
+                            <button class="btn btn-primary btn-sm">Editar</button>
+                        </a>
+                    </td>
+                </tr>
+            @endforeach
         </table>
     </div>
 

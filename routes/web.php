@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AssociadosController;
+use App\Http\Controllers\AreasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,26 @@ use App\Http\Controllers\AssociadosController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/* Rotas para Áreas */
+
+// Atualização de associados
+Route::put('update/areas/{id}', [AreasController::class, 'update'])->name('update.areas');
+
+// Página de edição
+Route::get('edit/areas/{id}', [AreasController::class, 'edit'])->name('edit.areas');
+
+// Set de areas
+Route::post('store/areas', [AreasController::class, 'store'])->name('store.areas');
+
+// Cadastrar areas
+Route::get('create/areas', [AreasController::class, 'create'])->name('create.areas');
+
+// Retorna a página index de areas
+Route::get('index/areas', [AreasController::class, 'index'])->name('index.areas');
+
+
+/* Rotas para Associados */
 
 // Atualização de associados
 Route::put('update/{id}', [AssociadosController::class, 'update'])->name('update.associados');

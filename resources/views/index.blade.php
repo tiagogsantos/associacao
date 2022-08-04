@@ -41,7 +41,7 @@
                         </div>
                         <div class="text-end pt-1">
                             <p class="text-sm mb-0 text-capitalize">Associados com <br/>Áreas compradas</p>
-                            <h4 class="mb-0">3,462</h4>
+                            <h4 class="mb-0">{{ $areasCompradas->count() }}</h4>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                         </div>
                         <div class="text-end pt-1">
                             <p class="text-sm mb-0 text-capitalize">Total de <br>Aéreas compradas</p>
-                            <h4 class="mb-0">6</h4>
+                            <h4 class="mb-0">{{ $areas->count() }}</h4>
                         </div>
                     </div>
                 </div>
@@ -122,13 +122,13 @@
                                                 <span class="text-xs font-weight-bold"> {{ $associado->email }} </span>
                                             </td>
                                             <td class="align-middle">
-                                                <span class="text-xs font-weight-bold"> 32 ª Área </span>
+                                                <span class="text-xs font-weight-bold"> {{ $associado->area_id }} ª Área </span>
                                             </td>
                                             <td>
                                                 <a href="{{ route('show.associados', $associado->id) }}">
                                                     <button class="btn btn-primary btn-sm">Visualizar</button>
                                                 </a>
-                                                <a href="{{ route('edit.associados', $associado->id) }}">
+                                                <a href="{{ route('edit.associados', [$associado->id, $associado->area_id]) }}">
                                                     <button class="btn btn-info btn-sm">Editar</button>
                                                 </a>
                                             </td>

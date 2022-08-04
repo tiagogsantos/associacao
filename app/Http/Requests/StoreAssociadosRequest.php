@@ -61,7 +61,7 @@ class StoreAssociadosRequest extends FormRequest
     }
 
 
-    public function all($keys = null)
+  /*  public function all($keys = null)
     {
         $this->validateFieldsCpf(parent::all());
 
@@ -73,7 +73,7 @@ class StoreAssociadosRequest extends FormRequest
         $cpf['cpf'] = str_replace(['.', '-'], '', $this->request->all()['cpf']);
 
         return $cpf;
-    }
+    } */
 
     public function setDateOfBirthAttribute($value)
     {

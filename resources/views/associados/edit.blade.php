@@ -37,7 +37,7 @@
                 <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
                         <label class="form-label">CPF:</label>
-                        <input class="form-control" name="cpf" id="" value="{{ $associados->cpf }}" disabled>
+                        <input class="form-control" name="cpf" id="" value="{{ $associados->cpf }}" readonly>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -96,6 +96,19 @@
                         <input class="form-control" name="country" id="pais" value="{{ $associados->country }}">
                     </div>
                 </div>
+
+                <div class="col-md-12">
+                    <div class="input-group input-group-outline my-3">
+                        <label class="form-label">Area Contratada:</label>
+                        <select class="form-control" name="area_id" id="">
+                            <option value="">Sem área comprada</option>
+                            @foreach($areasVinculadas as $area)
+                                <option value="{{ $area->id }}" {{ $area->id == $associados->area_id ? 'selected' : '' }}>{{ $area->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
             </div>
             <button type="submit" class="btn btn-success btn-sm my-2">Atualizar Associado</button>
         </form>

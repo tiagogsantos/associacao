@@ -31,8 +31,9 @@ class Associados extends Model
         'company'
     ];
 
-
-
-
+    public function areas ()
+    {
+       return $this->hasMany(Areas::class);
+    }
 
 }

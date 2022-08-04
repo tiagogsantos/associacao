@@ -14,7 +14,10 @@ class CreateAssociadosTable extends Migration
     public function up()
     {
         Schema::create('associados', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
+
+            $table->unsignedBigInteger('area_id')->unsigned();
+
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone');
@@ -30,14 +33,14 @@ class CreateAssociadosTable extends Migration
             $table->string('state');
             $table->string('country');
 
-           /* $table->unsignedBigInteger('area_id')->unsigned();
-            $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade'); */
+            $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
+
+            /* $table->unsignedBigInteger('area_id')->unsigned();
+             $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade'); */
 
             $table->timestamps();
         });
     }
-
-
 
     /**
      * Reverse the migrations.

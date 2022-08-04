@@ -110,6 +110,18 @@
                         <input class="form-control" name="country" id="pais" value="{{ old('country') }}">
                     </div>
                 </div>
+
+                <div class="col-md-12">
+                    <div class="input-group input-group-outline my-3">
+                        <label class="form-label">Area Contratada:</label>
+                        <select class="form-control" name="area_id" id="">
+                            <option value="">Sem área comprada</option>
+                            @foreach($areas as $area)
+                                <option value="{{ $area->id }}">{{ $area->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
             </div>
             <button type="submit" class="btn btn-success btn-sm my-2">Cadastrar associados</button>
         </form>

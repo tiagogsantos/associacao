@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAssociadosRequest;
+use App\Models\Areas;
 use App\Models\Associados;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -25,7 +26,11 @@ class AssociadosController extends Controller
     // Retorna a página de criação dos associados
     public function create()
     {
-        return view('associados.create');
+        $areas = Areas::all();
+
+        return view('associados.create', [
+            'areas' => $areas
+        ]);
     }
 
     // Criação de novos associados
@@ -59,7 +64,8 @@ class AssociadosController extends Controller
                     'city' => $request->input('city'),
                     'state' => $request->input('state'),
                     'country' => $request->input('country'),
-                    'road' => $request->input('road')
+                    'road' => $request->input('road'),
+                    'area_id' => $request->input('area_id')
                 ]);
 
                 DB::commit();
@@ -82,17 +88,23 @@ class AssociadosController extends Controller
         ]);
     }
 
-    // Metodo para a ediçãpo
-    public function edit($id)
+    // Metodo para a edição
+    public function edit($id, $codarea = null)
     {
         $associados = Associados::where('id', $id)->first();
+
+        $areas = Areas::where('id', $codarea);
+
+        $areasVinculadas = Areas::all();
 
         if (empty($associados)) {
             return view('associados.edit')->with('warning', 'Não foi possível buscar o Associado desejado!');
         }
 
         return view('associados.edit', [
-            'associados' => $associados
+            'associados' => $associados,
+            'areas' => $areas,
+            'areasVinculadas' => $areasVinculadas
         ]);
     }
 
@@ -115,7 +127,8 @@ class AssociadosController extends Controller
                     'city' => $request->input('city'),
                     'state' => $request->input('state'),
                     'country' => $request->input('country'),
-                    'road' => $request->input('road')
+                    'road' => $request->input('road'),
+                    'area_id' => $request->input('area_id')
                 ]);
 
             DB::commit();

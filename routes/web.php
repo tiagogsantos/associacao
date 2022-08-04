@@ -43,7 +43,7 @@ Route::put('update/{id}', [AssociadosController::class, 'update'])->name('update
 Route::get('show/{id}', [AssociadosController::class, 'show'])->name('show.associados');
 
 // Editar associados
-Route::get('edit/{id}', [AssociadosController::class, 'edit'])->name('edit.associados');
+Route::get('edit/{id}/{codarea?}', [AssociadosController::class, 'edit'])->name('edit.associados');
 
 // Store de associados
 Route::post('store', [AssociadosController::class, 'store'])->name('store.associados');

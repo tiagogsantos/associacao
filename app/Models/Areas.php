@@ -70,9 +70,7 @@ class Areas extends Model
         $this->attributes['water'] = (($value === true || $value === 'on') ? 1 : 0);
     }
 
-
-
-    public function associados ()
+    public function associadosTeste ()
     {
         return $this->hasMany(Associados::class);
     }

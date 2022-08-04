@@ -66,21 +66,19 @@ class AreasController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd($request->all());
-
         DB::beginTransaction();
         try {
             Areas::where('id', $id)->
             update([
                 'name' => $request->input('name'),
                 'county' => $request->input('county'),
-                'earthlyvalue' => $request->input('earthlyvalue'),
+                'earthlyvalue' => str_replace(',', '', str_replace('.', '', $request->input('earthlyvalue'))),
                 'totalarea' => $request->input('totalarea'),
                 'coordinator' => $request->input('coordinator'),
-                'streetopening' => $request->input('streetopening'),
-                'sewage' => $request->input('sewage'),
-                'light' => $request->input('light'),
-                'water' => $request->input('water')
+                'streetopening' => $request->boolean('streetopening'),
+                'sewage' => $request->boolean('sewage'),
+                'light' => $request->boolean('light'),
+                'water' => $request->boolean('water')
             ]);
             DB::commit();
             return redirect()->back()->with('success', 'Área foi atualizada com sucesso!');

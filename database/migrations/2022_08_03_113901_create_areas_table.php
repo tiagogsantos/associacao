@@ -14,7 +14,9 @@ class CreateAreasTable extends Migration
     public function up()
     {
         Schema::create('areas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+
+            $table->unsignedBigInteger('associado_id')->unsigned();
 
             // Nome da area
             $table->string('name');
@@ -43,7 +45,10 @@ class CreateAreasTable extends Migration
             //Agua
             $table->boolean('water')->default('0');
 
+            $table->foreign('associado_id')->references('id')->on('associados')->onDelete('cascade');
+
             $table->timestamps();
+
         });
     }
 

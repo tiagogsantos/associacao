@@ -12,6 +12,8 @@ class Areas extends Model
     protected $table = 'areas';
     protected $primaryKey = 'id';
 
+    public $timestamps = false;
+
     protected $fillable = [
         'name',
         'county',
@@ -29,8 +31,13 @@ class Areas extends Model
         if(empty($value)) {
             $this->attributes['earthlyvalue'] = null;
         } else {
-            $this->attributes['earthlyvalue'] = floatval($this->convertStringToDouble($value));
+           $this->attributes['earthlyvalue'] = floatval($this->convertStringToDouble($value));
         }
+    }
+
+    public function getEarthlyvalueAttribute($value)
+    {
+        return number_format($value, 2, ',', '.');
     }
 
     private function convertStringToDouble ($param)
@@ -65,5 +72,9 @@ class Areas extends Model
 
 
 
+    public function associados ()
+    {
+        return $this->hasMany(Associados::class);
+    }
 
 }

@@ -29,8 +29,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Total do Valor da Área</label>
-                        <input type="text" class="form-control money" name="earthlyvalue"
-                               value="{{ old('earthlyvalue') ?? $areas->earthlyvalue }}">
+                        <input type="text" class="form-control" name="earthlyvalue"
+                               value="{{ $areas->earthlyvalue }}" readonly>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-success btn-sm mt-5">Cadastrar nova área</button>
+                <button type="submit" class="btn btn-success btn-sm mt-5">Editar área</button>
             </div>
         </div>
     </form>

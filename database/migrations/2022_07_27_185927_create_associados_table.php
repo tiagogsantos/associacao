@@ -29,9 +29,15 @@ class CreateAssociadosTable extends Migration
             $table->string('city');
             $table->string('state');
             $table->string('country');
+
+           /* $table->unsignedBigInteger('area_id')->unsigned();
+            $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade'); */
+
             $table->timestamps();
         });
     }
+
+
 
     /**
      * Reverse the migrations.

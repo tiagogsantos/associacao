@@ -30,4 +30,9 @@ class Associados extends Model
         'birthday',
         'company'
     ];
+
+
+
+
+
 }

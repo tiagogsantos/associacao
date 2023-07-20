@@ -20,7 +20,17 @@ use App\Http\Controllers\EventosController;
 
 /* Rotas para Eventos */
 Route::prefix('eventos')->group(function () {
+
+    Route::post('update/{id}', [EventosController::class, 'update'])->name('eventos.update');
+
+    Route::get('edit/{id}', [EventosController::class, 'edit'])->name('eventos.edit');
+
+    Route::post('store', [EventosController::class, 'store'])->name('eventos.store');
+
+    Route::get('create', [EventosController::class, 'create'])->name('eventos.create');
+
     Route::get('index', [EventosController::class, 'index'])->name('eventos.index');
+
 });
 
 

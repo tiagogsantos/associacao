@@ -15,11 +15,12 @@ class CreateEventosTable extends Migration
     {
         Schema::create('eventos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('coordinator');
-            $table->string('duration');
             $table->string('area_id');
-            $table->date('date_event');
+            $table->string('name_event');
+            $table->string('locale_event');
+            $table->string('responsible_vent');
+            $table->date('event_data');
+            $table->time('event_time');
             $table->timestamps();
         });
     }

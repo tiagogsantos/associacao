@@ -93,4 +93,6 @@ class AreasController extends Controller
     {
 
     }
+
+
 }

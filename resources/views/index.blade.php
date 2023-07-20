@@ -80,7 +80,7 @@
                         </div>
                         <div class="card-body px-0 pb-2">
                             <div class="table-responsive">
-                                <table class="table align-items-center mb-0 text-center">
+                                <table class="table table-bordered align-items-center mb-0 text-center">
                                     <thead>
                                     <tr>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -104,16 +104,9 @@
                                     @foreach($associados as $associado)
                                         <tr>
                                             <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div>
-                                                        <img src="{{ asset('img/small-logos/logo-xd.svg') }}"
-                                                             class="avatar avatar-sm me-3" alt="xd">
-                                                    </div>
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <span
-                                                            class="text-xs font-weight-bold">{{ $associado->name }}</span>
-                                                    </div>
-                                                </div>
+
+                                                        <span class="text-xs font-weight-bold">{{ $associado->name }}</span>
+
                                             </td>
                                             <td>
                                                 <span class="text-xs font-weight-bold"> {{ $associado->phone }} </span>
@@ -122,7 +115,8 @@
                                                 <span class="text-xs font-weight-bold"> {{ $associado->email }} </span>
                                             </td>
                                             <td class="align-middle">
-                                                <span class="text-xs font-weight-bold"> {{ $associado->area_id }} ª Área </span>
+                                                <span
+                                                    class="text-xs font-weight-bold"> {{ $associado->area_id }} ª Área </span>
                                             </td>
                                             <td>
                                                 <a href="{{ route('show.associados', $associado->id) }}">

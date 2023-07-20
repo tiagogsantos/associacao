@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="">
-                        <label class="form-label">Nome:</label>
+                        <label for="" class="form-label">Nome:</label>
                         <input class="form-control" name="name" id="" value="{{ $associados->name }}">
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                 <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
                         <label class="form-label">Telefone:</label>
-                        <input class="form-control" name="phone" id="" value="{{ $associados->phone }}">
+                        <input class="form-control" name="phone_number" id="" value="{{ $associados->phone_number }}">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label">Data de Nascimento:</label>
+                    <label for="" class="form-label">Data de Nascimento:</label>
                     <input class="form-control date" name="birthday" id="date" value="{{ $associados->birthday }}">
                 </div>
                 <div class="col-md-6">

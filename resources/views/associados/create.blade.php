@@ -24,7 +24,7 @@
                 <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
                         <label class="form-label">Telefone:</label>
-                        <input class="form-control phone" name="phone" id="" value="{{ old('phone') }}">
+                        <input class="form-control phone" name="phone_number" id="" value="{{ old('phone_number') }}">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -77,7 +77,7 @@
                 <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
                         <label class="form-label">CEP:</label>
-                        <input class="form-control" name="cep" id="cep" value="{{ old('cep') }}">
+                        <input class="form-control cep" name="cep" id="cep" value="{{ old('cep') }}">
                     </div>
                 </div>
                 <div class="col-md-6">

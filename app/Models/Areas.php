@@ -12,7 +12,7 @@ class Areas extends Model
     protected $table = 'areas';
     protected $primaryKey = 'id';
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $fillable = [
         'name',

@@ -12,7 +12,7 @@ class Associados extends Model
     protected $primaryKey = 'id';
     protected $table = 'associados';
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $fillable = [
         'name',

@@ -20,7 +20,7 @@ class CreateAssociadosTable extends Migration
 
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('phone');
+            $table->string('phone_number');
             $table->string('cpf')->unique();
             $table->string('birthday');
             $table->string('rg');

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AssociadosController;
 use App\Http\Controllers\AreasController;
+use App\Http\Controllers\EventosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,13 @@ use App\Http\Controllers\AreasController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+/* Rotas para Eventos */
+Route::prefix('eventos')->group(function () {
+    Route::get('index', [EventosController::class, 'index'])->name('eventos.index');
+});
+
 
 /* Rotas para Áreas */
 

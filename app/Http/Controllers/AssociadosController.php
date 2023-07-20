@@ -108,7 +108,7 @@ class AssociadosController extends Controller
         ]);
     }
 
-    public function update(StoreAssociadosRequest $request, $id)
+    public function update(StoreAssociadosRequest $request, $id): \Illuminate\Http\RedirectResponse
     {
         DB::beginTransaction();
         try {

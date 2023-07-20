@@ -11,7 +11,9 @@
         }
 
         //Quando o campo cep perde o foco.
-        $("#cep").blur(function () {
+        $(".cep").blur(function () {
+
+            alert('eu sou um teste');
 
             //Nova variável "cep" somente com dígitos.
             var cep = $(this).val().replace(/\D/g, '');

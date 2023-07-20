@@ -20,7 +20,7 @@
                 <div class="col-md-6">
                     <div class="input-group input-group-outline my-3">
                         <label class="form-label">Telefone:</label>
-                        <input class="form-control phone" name="phone" id="" value="{{ $associados->phone }}" readonly>
+                        <input class="form-control phone" name="phone_number" id="" value="{{ $associados->phone_number }}" readonly>
                     </div>
                 </div>
                 <div class="col-md-6">

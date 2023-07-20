@@ -30,10 +30,10 @@ class StoreAssociadosRequest extends FormRequest
             'birthday' => 'required',
             'company' => 'required',
             'rg' => 'required',
-            'cpf' => 'required|int',
+            'cpf' => 'required|string',
             'marital_status' => 'required',
             'cep' => 'required',
-            'number' => 'required',
+            'number' => 'required|integer',
             'city' => 'required',
             'state' => 'required',
             'country' => 'required'

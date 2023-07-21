@@ -22,6 +22,10 @@ class Eventos extends Model
         'event_time'
     ];
 
+    public static function associados()
+    {
+    }
+
     public function areas()
     {
         return $this->belongsTo(Areas::class, 'area_id'); // Substitua 'area_id' pelo nome correto da chave estrangeira na tabela "Eventos" que faz referência à tabela "Areas".

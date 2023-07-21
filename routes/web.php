@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AssociadosController;
 use App\Http\Controllers\AreasController;
 use App\Http\Controllers\EventosController;
+use App\Http\Controllers\ContribuicaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,16 @@ use App\Http\Controllers\EventosController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::prefix('contribuicao')->group(function () {
+
+    Route::post('store', [ContribuicaoController::class, 'store'])->name('contribuicao.store');
+
+    Route::get('create', [ContribuicaoController::class, 'create'])->name('contribuicao.create');
+
+    Route::get('index', [ContribuicaoController::class, 'index'])->name('contribuicao.index');
+
+});
 
 
 /* Rotas para Eventos */

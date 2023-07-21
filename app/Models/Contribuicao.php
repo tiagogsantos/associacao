@@ -20,11 +20,6 @@ class Contribuicao extends Model
         'associado_id'
     ];
 
-    public function setPaymentVerificationAttribute($value)
-    {
-        $this->attributes['payment_verification'] = (($value === true || $value === 'on') ? 1 : 0);
-    }
-
     public function associados (): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Associados::class);
@@ -32,7 +27,7 @@ class Contribuicao extends Model
 
     public function areas (): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Areas::class);
+        return $this->belongsTo(Areas::class, 'area_id');
     }
 
 

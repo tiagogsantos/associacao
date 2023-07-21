@@ -104,9 +104,7 @@
                                     @foreach($associados as $associado)
                                         <tr>
                                             <td>
-
-                                                        <span class="text-xs font-weight-bold">{{ $associado->name }}</span>
-
+                                                <span class="text-xs font-weight-bold">{{ $associado->name }}</span>
                                             </td>
                                             <td>
                                                 <span class="text-xs font-weight-bold"> {{ $associado->phone }} </span>

@@ -18,6 +18,23 @@
                 <th>Area</th>
                 <th>Nome do Associado</th>
             </tr>
+            @foreach($contribuicoes as $contribuicao)
+                <tr>
+                    <td>{{ date('d-m-Y', strtotime($contribuicao->maturity)) }}</td>
+                    <td>
+                        @if($contribuicao->payment_verification == 1)
+                            <span class="badge badge-pill badge-success">Pago</span>
+                        @else
+                            <span class="badge badge-pill badge-danger">Pendente</span>
+                        @endif
+                    </td>
+                    <td>@foreach($areas as $area)
+                            {{ $area->name }}
+                        @endforeach
+                    </td>
+                    <td>{{ $contribuicao->associado_id }}</td>
+                </tr>
+            @endforeach
         </table>
     </div>
 

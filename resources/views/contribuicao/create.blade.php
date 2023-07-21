@@ -18,8 +18,10 @@
 
                 <div class="col-md-6">
                     <div class="form-check form-check-inline">
-                        <input type="checkbox" class="form-check-input"
-                               name="payment_verification" {{ (old('payment_verification') == 'on' || old('payment_verification') == true ? 'checked' : '' ) }}>
+                        <label>
+                            <input type="checkbox" class="form-check-input"
+                                   name="payment_verification" {{ (old('payment_verification') == 'on' || old('payment_verification') === true ? 'checked' : '' ) }}>
+                        </label>
                         <label class="form-check-label">Pagamento Efetuado?</label>
                     </div>
                 </div>
